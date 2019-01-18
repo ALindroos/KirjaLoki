@@ -10,6 +10,6 @@ Toimintoja:
    * Kirjojen haku
    * Kirjautuminen ja rekisteröinti
    * Oman luku-profiilin muokkaus, luettujen kirjojen lisäys
-   * Arvosteluiden kirjoittaminen kirjoihin
+   * Arvosteluiden kirjoittaminen/muokkaus/poisto
    
 
