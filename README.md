@@ -1,6 +1,7 @@
 # KirjaLoki
 
-KirjaLokin avulla voi kätevästi ylläpitää ja arvostella lukemiaan kirjoja. Käyttäjät voivat lisätä sovellukseen kirjoja erilaisine tietoineen ja muut käyttävät voivat sitten kätevästi käyttää näitä muiden lisäämiä kirjoja omiin lokeihinsa. Käyttäjät voivat jättää myös arvosteluja tai kommentteja kirjoihin joilloin ohjelma toimii myös hyvänä lukuvinkkien etsimis-paikkana. Sovelluksesta voi myös kätevästi etsiä kirjoa eri tavoilla, kuten kirjailijoiden tai muiden kirjan tietojen pohjalta.
+KirjaLokin avulla voi kätevästi merkitä muistiin ja arvostella lukemiaan kirjoja. Näin luetut kirjat pysyyvät varmasti muistissa ja välttyy kiusallisilta tilanteilta kun ei juuri muista sitä kirjaa jota haluaisi kaverille suositella.
+Käyttäjät voivat lisätä sovellukseen kirjoja erilaisine tietoineen ja muut käyttävät voivat sitten kätevästi lisätä näitä omiin lokeihinsa. Kirjoille voi jättää myös vapaamuotoisia arvosteluja tai kommentteja jolloin ohjelma toimii myös hyvänä lukuvinkkien etsimispaikkana. Hakutoiminnon avulla voi kätevästi etsiä kirjoa eri tavoilla, kuten kirjailijoiden tai muiden kirjan tietojen pohjalta.
 
 
 Toimintoja:
