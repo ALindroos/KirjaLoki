@@ -6,6 +6,10 @@
   </head>
 
   <body>
+    <ul>
+      <li><a href="{{url_for('books_index') }}">Listaa Kirjat</a></li>
+      <li><a href="{{url_for('books_form') }}">Lisää Kirja</a></li>
+    </ul>
     {% block body %}
       <p>
         Content.
