@@ -3,15 +3,25 @@
 {% block body %}
  <table>
      <tr>
-         <th>Title</th>
-         <th>Author</th>
+         <th>Books</th>
      </tr>
 
      {% for book in books %}
      <tr>
-         <td>{{ book.title }}</td>
-         <td>{{ book.author }}</td>
+         <td>{{ book.title }}<br>by: {{ book.author }}</td>
+         <td>
+            <form method="POST" action="{{ url_for('books_edit', book_id=book.id) }}">
+                <input type="submit" value="Edit"/>
+            </form>
+         </td>
      </tr>
      {% endfor %}
  </table> 
+
+ <style>
+     table div + div {
+         margin-top: 1em;
+     }
+ 
+ </style>
 {% endblock %} 
