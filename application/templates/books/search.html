@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+ <p>Haku:</p>
+ <form method="POST" action="{{ url_for('books_results') }}">
+    <div>
+        <input type="text" name="seachTerm"/>
+    </div>
+    <div>
+        <input type="submit" value="Hae"/>
+    </div>
+ </form>
+ <style>
+ </style>
+
+{% endblock %} 

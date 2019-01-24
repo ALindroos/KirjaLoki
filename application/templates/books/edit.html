@@ -2,19 +2,23 @@
 
 {% block body %}
 
-<p>{{ book.title }}<br>by {{ book.author }}</p>
+<p>{{ book.title }}<br>({{ book.author }})</p>
 
 <form method="POST" action="{{ url_for('books_update', book_id=book.id) }}">
     <div>
-        <label for="title">New Title:</label>
-        <input type="text" name="title"/>
+        <label for="title">Nimi:</label>
+        <input type="text" value="{{ book.title }}" name="title"/>
     </div>
     <div>
-        <label for="author">New Author:</label>
-        <input type="text" name="author"/>
+        <label for="author">Kirjailija:</label>
+        <input type="text" value="{{ book.author }}" name="author"/>
+    </div>
+    <div>
+        <label for="description">Kuvaus:</label>
+        <textarea name="description">{{ book.description }}</textarea>
     </div>
     <div class="button">
-        <button type="submit">Confirm Edit</button>
+        <button type="submit">Vahvista Muutokset</button>
     </div>
 </form>
 
@@ -32,8 +36,13 @@
         box-sizing: border-box;
     }
     button {
-        margin-left: 120px;
+        margin-left: 60px;
     }
+    textarea {
+        vertical-align: top;
+        height: 5em;
+    }
+
 </style>
 
 {% endblock %}
