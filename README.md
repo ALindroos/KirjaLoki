@@ -14,4 +14,5 @@ Toimintoja:
    * Oman luku-profiilin muokkaus, luettujen kirjojen lisäys
    * Arvosteluiden kirjoittaminen/muokkaus/poisto
    
+[User Stories:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/features.md)
 
