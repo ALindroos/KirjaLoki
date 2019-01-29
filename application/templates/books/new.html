@@ -3,16 +3,16 @@
 {% block body %}
 <form method="POST" action="{{ url_for('books_create') }}">
     <div>
-        <label for="title">Nimi:</label>
-        <input type="text" name="title"/>
+        {{ form.title.label }}
+        {{ form.title }}
     </div>
     <div>
-        <label for="author">Kirjailija:</label>
-        <input type="text" name="author"/>
+        {{ form.author.label }}
+        {{ form.author }}
     </div>
     <div>
-        <label for="description">Kuvaus:</label>
-        <textarea name="description"></textarea>
+        {{ form.title.label}}
+        {{ form.description }}
     </div>
     <div>
         <input type="submit" value="Lisää Kirja"/>

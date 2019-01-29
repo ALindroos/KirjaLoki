@@ -3,3 +3,5 @@
 Admin/lisääjä?Kaikki?
 
 * Lisää tietoa?
+
+* Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?)

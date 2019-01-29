@@ -6,16 +6,16 @@
 
 <form method="POST" action="{{ url_for('books_update', book_id=book.id) }}">
     <div>
-        <label for="title">Nimi:</label>
-        <input type="text" value="{{ book.title }}" name="title"/>
+        {{ form.title.label }}
+        {{ form.title(value=book.title) }}
     </div>
     <div>
-        <label for="author">Kirjailija:</label>
-        <input type="text" value="{{ book.author }}" name="author"/>
+        {{ form.author.label }}
+        {{ form.author(value=book.author) }}
     </div>
     <div>
-        <label for="description">Kuvaus:</label>
-        <textarea name="description">{{ book.description }}</textarea>
+        {{ form.description.label }}
+        {{ form.description }}
     </div>
     <div class="button">
         <button type="submit">Vahvista Muutokset</button>
