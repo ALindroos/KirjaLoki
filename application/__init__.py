@@ -13,4 +13,8 @@ from application import views
 from application.books import models
 from application.books import views
 
+from application.auth import models
+from application.auth import views
+
+
 db.create_all()

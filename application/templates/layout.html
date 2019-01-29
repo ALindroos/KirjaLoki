@@ -14,4 +14,35 @@
     {% block body %}
     {% endblock %}
   </body>
+
+  <style>
+      form div + div {
+          margin-top: 1em;
+      }
+      label {
+          display: inline-block;
+          width: 150px;
+          text-align: right;
+      }
+      input, textarea {
+          width: 300px;
+          box-sizing: border-box;
+      }
+      button {
+          margin-left: 60px;
+      }
+      textarea {
+          vertical-align: top;
+          height: 5em;
+      }
+      table div + div {
+          margin-top: 1em;
+      }
+      table {
+          border-collapse: separate;
+          border-spacing: 0 10px;
+      }
+  
+  </style>
+
 </html>
