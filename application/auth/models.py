@@ -1,5 +1,11 @@
 from application import db
 
+
+readBooks = db.Table('readBooks',
+    db.Column('book_id', db.Integer, db.ForeignKey('book.id'), primary_key=True),
+    db.Column('account_id', db.Integer, db.ForeignKey('account.id'), primary_key=True)
+)
+
 class User(db.Model):
 
     __tablename__ = "account"
@@ -12,6 +18,9 @@ class User(db.Model):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+
+    readBooks = db.relationship('Book',secondary=readBooks, lazy="subquery",
+        backref=db.backref('books', lazy=True))
 
     def __init__(self, name, username, password):
         self.name = name

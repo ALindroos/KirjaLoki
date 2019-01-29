@@ -1,9 +1,10 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.books.models import Book
 from application.books.forms import BookForm
+from application.auth.models import readBooks
 
 #Basic view, shows all books
 @app.route("/books", methods=["GET"])
@@ -74,3 +75,14 @@ def books_results():
     .all()
     
     return render_template("books/results.html", books = res)
+
+#Mark a book read
+@app.route("/books/add/<book_id>", methods=["POST"])
+@login_required
+def book_markRead(book_id):
+
+    current_user.readBooks.append(Book.query.get(book_id))
+    db.session().commit()
+
+    return redirect(url_for("user_page", user_id=current_user.id))
+

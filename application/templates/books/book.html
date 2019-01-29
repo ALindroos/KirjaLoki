@@ -4,8 +4,18 @@
 
  <p>{{ book.title }}<br>({{ book.author }})</p>
  <p>Kuvaus:<br>{{ book.description }}</p>
+ 
+ <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
+        <input type="submit" value="Merkitse luetuksi"/>
+ </form>
+
+ </form>
+ <form method="POST" action="">
+       <input type="submit" value="Poista luetuista kirjoista"/>
+ </form>
+
  <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
-        <input type="submit" value="Muokkaa"/>
+              <input type="submit" value="Muokkaa"/>
  </form>
 
  
