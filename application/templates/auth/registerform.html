@@ -2,7 +2,7 @@
 
 {% block body %}
 {{ error }}
-<form method="POST" action="{{ url_for('auth_login') }}">
+<form method="POST" action="{{ url_for('auth_register') }}">
     <div>
         {{ form.username.label }}
         {{ form.username }}
@@ -12,10 +12,9 @@
         {{ form.password }}
     </div>
     <div>
-        <input type="submit" value="Kirjaudu"/>
+        <input type="submit" value="Luo Käyttäjä"/>
     </div>
 </form>
 
-<p><a href="{{ url_for('auth_register') }}">Luo uusi käyttäjätunnus?</a></p>
 
 {% endblock %}

@@ -3,11 +3,11 @@
 
 ## Backlog
 
-### Käyttäjä voi poistaa kirjoja luettujen kirjojen listalta
+
 
 ### Käyttäjä voi kirjoittaa komentteja kirjoille
 
-### Käyttäjä voi poistaa kirjoja
+### Siirtyminen pilvessä olevaan tietokantaan
 
 ### Käyttöliittymä
 
@@ -15,6 +15,12 @@
 
 
 ## Done
+
+### Käyttäjä voi poistaa kirjoja luettujen kirjojen listalta
+Kirjansivuilla on nyt nappi jonka avulla lisätyn kirjan voi poistaa omalta listaltaan
+
+### Käyttäjä voi poistaa kirjoja
+Kirjan sivuilta voi poistaa kirjan
 
 ### Käyttäjä voi katsella omia lisättyjä kirjojaan
 Käyttäjä näkee omalta sivultaan luetuiksi lisäämänsä kirjat
