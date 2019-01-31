@@ -8,7 +8,7 @@
   <body>
     {% if current_user.is_authenticated %}
     <p>
-        Kirjautunut nimellä {{current_user.name }}
+        Kirjautunut nimellä <a href="{{url_for('user_page', user_id=current_user.id) }}">{{current_user.name }}</a>
         <br><a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
     </p>
     {% else %}
@@ -19,7 +19,6 @@
       <li><a href="{{url_for('books_index') }}">Listaa Kirjat</a></li>
       <li><a href="{{url_for('books_form') }}">Lisää Kirja</a></li>
       <li><a href="{{url_for('books_search') }}">Hae Kirjoja</a></li>
-      <li><a href="{{url_for('user_page', user_id=current_user.id) }}">Käyttäjän tiedot</a></li>
     </ul>
     {% block body %}
     {% endblock %}

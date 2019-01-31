@@ -3,11 +3,7 @@
 
 ## Backlog
 
-### Käyttäjä voi kirjautua sovellukseen
-
-### Käyttäjä voi lisätä kirjoja omalle luettujen kirjojen listalle
-
-### Käyttäjä voi luoda/muokata omaa lukija-profiiliaan
+### Käyttäjä voi poistaa kirjoja luettujen kirjojen listalta
 
 ### Käyttäjä voi kirjoittaa komentteja kirjoille
 
@@ -15,11 +11,19 @@
 
 ### Käyttöliittymä
 
-### (Kirjailijoille myös oma tietokohde joilla yksilöllistä tietoa)
-
+### Käyttäjä voi luoda käyttäjätunnuksen sovellukseen
 
 
 ## Done
+
+### Käyttäjä voi katsella omia lisättyjä kirjojaan
+Käyttäjä näkee omalta sivultaan luetuiksi lisäämänsä kirjat
+
+### Käyttäjä voi lisätä kirjoja omalle luettujen kirjojen listalle
+Käyttäjä voi kirjantiedoista nappia painamalla lisätä kirjan omalle luettujen kirjojen listalle
+
+### Käyttäjä voi kirjautua sovellukseen ja kirjautua ulos
+Käyttäjä voi kirjautua olemassa olevilla tunnuksilla järjestelmäään ja poistua
 
 ### Käyttäjä voi lisätä kirjan
 Käyttöliittymän kautta voi lisätä kirjan. Aluksi tiedoilla: kirjan nimi, kirjailija, kuvaus.

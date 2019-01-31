@@ -5,17 +5,30 @@
  <p>{{ book.title }}<br>({{ book.author }})</p>
  <p>Kuvaus:<br>{{ book.description }}</p>
  
- <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
-        <input type="submit" value="Merkitse luetuksi"/>
- </form>
+ {% set vars = {'read': False} %}
+ {% for readbook in current_user.readBooks %}
+      {% if readbook.id == book.id %}
+            {% if vars.update({'read':True}) %} {% endif %}
+      {% endif %}      
+ {% endfor %}
 
- </form>
- <form method="POST" action="">
-       <input type="submit" value="Poista luetuista kirjoista"/>
- </form>
+ {% if vars.read %}
+      <form method="POST" action="{{ url_for('book_removeRead', book_id=book.id) }}">
+            <input type="submit" value="Poista luetuista kirjoista"/>
+      </form>
+ {% else %}
+      <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
+            <input type="submit" value="Merkitse luetuksi"/>
+     </form>
+ {% endif %}
 
  <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
               <input type="submit" value="Muokkaa"/>
+ </form>
+
+
+ <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
+       <input type="submit" value="Poista Kirja"/>
  </form>
 
  

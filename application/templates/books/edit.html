@@ -5,6 +5,16 @@
 <p>{{ book.title }}<br>({{ book.author }})</p>
 
 <form method="POST" action="{{ url_for('books_update', book_id=book.id) }}">
+
+    {% if form.errors %}
+        <p><strong>Errors</strong></p>
+        {% for field in form.errors %}
+        {% for error in form.errors[field] %}
+            <div>{{field }}: {{ error }}</div>
+        {% endfor %}
+        {% endfor %}
+    {% endif %}
+
     <div>
         {{ form.title.label }}
         {{ form.title(value=book.title) }}
