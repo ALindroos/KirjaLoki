@@ -16,6 +16,9 @@
       <form method="POST" action="{{ url_for('book_removeRead', book_id=book.id) }}">
             <input type="submit" value="Poista luetuista kirjoista"/>
       </form>
+      <form method="GET" action="{{ url_for('note_form', book_id=book.id) }}">
+            <input type="submit" value="Kirjoita kommentti"/>
+      </form>
  {% else %}
       <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
             <input type="submit" value="Merkitse luetuksi"/>

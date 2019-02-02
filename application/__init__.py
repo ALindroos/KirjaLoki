@@ -17,6 +17,9 @@ from application.books import views
 from application.auth import models
 from application.auth import views
 
+from application.notes import models
+from application.notes import views
+
 #Kirjautuminen
 from application.auth.models import User
 from os import urandom

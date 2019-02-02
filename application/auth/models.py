@@ -22,6 +22,8 @@ class User(db.Model):
     readBooks = db.relationship('Book',secondary=readBooks, lazy="subquery",
         backref=db.backref('books', lazy=True))
 
+    userNotes = db.relationship("Note", backref='account', lazy=True)
+
     def __init__(self, name, username, password):
         self.name = name
         self.username = username

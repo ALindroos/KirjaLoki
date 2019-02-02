@@ -10,6 +10,8 @@ class Book(db.Model):
     author = db.Column(db.String(144), nullable=False)
     description = db.Column(db.String(526), nullable=True)
 
+    bookNotes = db.relationship("Note", backref='book', lazy=True)
+
     def __init__(self, title, author, description):
         self.title = title
         self.author = author

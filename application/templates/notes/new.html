@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST" action="">
+    <div>
+        {{ form.note.label }}
+        {{ form.note }}
+    </div>
+    <div>
+        <input type="submit" value="Lisää kommentti"/>
+    </div>
+</form>
+
+{% endblock %}
