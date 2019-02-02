@@ -3,6 +3,17 @@
 {% block body %}
 {{ error }}
 <form method="POST" action="{{ url_for('auth_register') }}">
+
+    {% for field in form.errors %}
+        {% for error in form.errors[field] %}
+            <div>{{field }}: {{ error }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    <div>
+        {{ form.dispname.label }}
+        {{ form.dispname }}
+    </div>
     <div>
         {{ form.username.label }}
         {{ form.username }}
@@ -11,6 +22,11 @@
         {{ form.password.label }}
         {{ form.password }}
     </div>
+    <div>
+        {{ form.confirm.label }}
+        {{ form.confirm }}
+    </div>
+
     <div>
         <input type="submit" value="Luo Käyttäjä"/>
     </div>
