@@ -2,8 +2,16 @@
 
 {% block body %}
 
- <p>{{ book.title }}<br>({{ book.author }})</p>
- <p>Kuvaus:<br>{{ book.description }}</p>
+ <h2>{{ book.title }}<br>({{ book.author }})</h2>
+ <h3>Kuvaus:</h3>
+ <p>{{ book.description }}</p>
+ <h3>Käyttäjien merkintöjä:</h3>
+
+ <ul>
+     {% for note in book.bookNotes %}
+      <li>{{ note.note }}</li>  
+     {% endfor %}
+ </ul>
  
  {% set vars = {'read': False} %}
  {% for readbook in current_user.readBooks %}

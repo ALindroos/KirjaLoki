@@ -5,6 +5,7 @@ from application import app, db
 from application.books.models import Book
 from application.books.forms import BookForm
 from application.auth.models import readBooks
+from application.auth.models import User
 
 #Basic view, shows all books
 @app.route("/books", methods=["GET"])
