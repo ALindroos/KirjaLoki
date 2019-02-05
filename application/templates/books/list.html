@@ -3,14 +3,34 @@
 {% block body %}
  <table>
      <tr>
-         <th>Kirjoja</th>
+         <th>Uusia kirjoja</th>
      </tr>
 
-     {% for book in books %}
+     {% for book in recent %}
      <tr>
          <td><a href="{{ url_for('book_show', book_id=book.id) }}">{{ book.title }}</a><br>({{ book.author }})</td>
      </tr>
      {% endfor %}
  </table> 
+
+ <h3>Luetuimmat kirjat</h3>
+ <ul>
+     {% for book in popular %}
+     <li><a href="{{ url_for('book_show', book_id=book.id) }}">
+         {{ book.title }}</a> - {{ book.reads }}
+         <br>({{ book.author }})
+     </li>
+     {% endfor %}
+ </ul>
+
+ <h3>Puhutuimmat kirjat</h3>
+ <ul>
+     {% for book in notes %}
+     <li><a href="{{ url_for('book_show', book_id=book.id) }}">
+        {{ book.title }}</a> - {{ book.notes }}
+        <br>({{ book.author }})
+     </li>
+     {% endfor %}
+ </ul>
 
 {% endblock %} 
