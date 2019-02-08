@@ -12,6 +12,7 @@
       <li>{{ note.note }}</li>  
      {% endfor %}
  </ul>
+ <br>
  
  {% set vars = {'read': False} %}
  {% for readbook in current_user.readBooks %}
@@ -22,24 +23,24 @@
 
  {% if vars.read %}
       <form method="POST" action="{{ url_for('book_removeRead', book_id=book.id) }}">
-            <input type="submit" value="Poista luetuista kirjoista"/>
+            <button type="submit" class="btn btn-outline-primary">Poista luetuista kirjoista</button>
       </form>
       <form method="GET" action="{{ url_for('note_form', book_id=book.id) }}">
-            <input type="submit" value="Kirjoita kommentti"/>
+            <button type="submit" class="btn btn-outline-primary">Kirjoita kommentti</button>
       </form>
  {% else %}
       <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
-            <input type="submit" value="Merkitse luetuksi"/>
+            <button type="submit" class="btn btn-outline-primary">Merkitse luetuksi</button>
      </form>
  {% endif %}
 
  <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
-              <input type="submit" value="Muokkaa"/>
+            <button type="submit" class="btn btn-outline-primary">Muokkaa</button>
  </form>
 
 
  <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
-       <input type="submit" value="Poista Kirja"/>
+            <button type="submit" class="btn btn-outline-primary">Poista Kirja</button>
  </form>
 
  

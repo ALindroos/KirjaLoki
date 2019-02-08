@@ -6,12 +6,12 @@ Admin/lisääjä?Kaikki?
 
 * Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?)
 
-* Uusien käyttäjien luominen/validointi
-
-* Kirjojen validointi
-
-* Kirjojen poistaminen lukulistalta (switch input add/remove)
+* Salasana validointi?
 
 * Toivelista?
 
 * Bonus:Helmet linkitys?
+
+* Paranneltu listaus
+
+* Agregate queries

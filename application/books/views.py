@@ -10,7 +10,7 @@ from application.auth.models import User
 #Basic view, shows all books
 @app.route("/books", methods=["GET"])
 def books_index():
-    recent = Book.query.all()
+    recent = Book.most_recent()
     popular = Book.most_popular_books()
     notes = Book.most_notes()
     return render_template("books/list.html", recent=recent, popular=popular, notes=notes)

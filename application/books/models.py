@@ -51,3 +51,17 @@ class Book(db.Model):
             response.append({"id":row[0], "title":row[1], "author":row[2], "notes":row[3]})
 
         return response
+
+    @staticmethod
+    def most_recent():
+        stmt = text("SELECT Book.id, Book.title, Book.author, Book.date_created FROM Book"
+                    " GROUP By Book.date_created"
+                    " ORDER BY 4 DESC "
+                    " LIMIT 10")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"id":row[0], "title":row[1], "author":row[2]})
+
+        return response

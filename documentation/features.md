@@ -4,17 +4,21 @@
 ## Backlog
 
 
-
-### Käyttäjä voi kirjoittaa komentteja kirjoille
-
-### Siirtyminen pilvessä olevaan tietokantaan
-
 ### Käyttöliittymä
 
-### Käyttäjä voi luoda käyttäjätunnuksen sovellukseen
+### Käyttäjä voi poistaa/muokata kommentteja
 
 
 ## Done
+
+### Käyttäjä voi kirjoittaa komentteja kirjoille
+Käyttäjä voi lisätä kirjalla kommentin joka näkyy kirjan perustiedoissa kaikille käyttäjille
+
+### Siirtyminen pilvessä olevaan tietokantaan
+Sovellus käyttää nyt Herokun Postgresql-tietokantaa, tarkoittaen että käyttäjä voi käyttää sovellusta miltä tahansan koneelta netin välityksellä
+
+### Käyttäjä voi luoda käyttäjätunnuksen sovellukseen
+Käyttäjä voi luoda sovelluksen kautta uuden käyttäjätunnuksen, olettaen että saman nimistä tunnusta ei ole jo luotu
 
 ### Käyttäjä voi poistaa kirjoja luettujen kirjojen listalta
 Kirjansivuilla on nyt nappi jonka avulla lisätyn kirjan voi poistaa omalta listaltaan

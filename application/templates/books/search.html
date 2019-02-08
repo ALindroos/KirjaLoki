@@ -2,13 +2,14 @@
 
 {% block body %}
 
- <p>Haku:</p>
+ <h3>Hae Kirjoja<br></h3>
  <form method="POST" action="{{ url_for('books_results') }}">
-    <div>
-        <input type="text" name="seachTerm"/>
+    <div class="form-group">
+        <input type="text" class="form-control" name="seachTerm" placeholder="Kirjan nimi... / kirjailija.."/>
     </div>
+
     <div>
-        <input type="submit" value="Hae"/>
+        <button type="submit" class="btn btn-primary">Hae</button>
     </div>
  </form>
 

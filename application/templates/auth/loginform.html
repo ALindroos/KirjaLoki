@@ -3,16 +3,19 @@
 {% block body %}
 {{ error }}
 <form method="POST" action="{{ url_for('auth_login') }}">
-    <div>
-        {{ form.username.label }}
-        {{ form.username }}
+
+    <div class="form-group">
+        <label for="username">{{ form.username.label }}</label>
+        <input type ="text" class="form-control" id="username" name="username">
     </div>
-    <div>
-        {{ form.password.label }}
-        {{ form.password }}
+
+    <div class="form-group">
+        <label for="password">{{ form.password.label }}</label>
+        <input type="password" class="form-control" id="password" name="password">
     </div>
+
     <div>
-        <input type="submit" value="Kirjaudu"/>
+        <button type="submit" class="btn btn-primary">Kirjaudu</button>
     </div>
 </form>
 

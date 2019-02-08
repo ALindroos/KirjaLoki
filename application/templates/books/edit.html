@@ -2,8 +2,6 @@
 
 {% block body %}
 
-<p>{{ book.title }}<br>({{ book.author }})</p>
-
 <form method="POST" action="{{ url_for('books_update', book_id=book.id) }}">
 
     {% if form.errors %}
@@ -15,20 +13,23 @@
         {% endfor %}
     {% endif %}
 
-    <div>
-        {{ form.title.label }}
-        {{ form.title(value=book.title) }}
+    <div class="form-group">
+        <label for="title">{{ form.title.label }}</label>
+        <input type ="text" class="form-control" id="title" name="title" value="{{book.title}}">
     </div>
-    <div>
-        {{ form.author.label }}
-        {{ form.author(value=book.author) }}
+
+    <div class="form-group">
+        <label for="author">{{ form.author.label }}</label>
+        <input type ="text" class="form-control" id="author" name="author" value="{{book.author}}">
     </div>
-    <div>
-        {{ form.description.label }}
-        {{ form.description }}
+
+    <div class="form-group">
+        <label for="description">{{ form.description.label }}</label>
+        <textarea class="form-control" id="description" name="description">{{book.description}}</textarea>
     </div>
+
     <div>
-        <input type="submit" value="Vahvista Muutokset"/>
+        <button type="submit" class="btn btn-primary">Vahvista Muutokset</button>
     </div>
 </form>
 

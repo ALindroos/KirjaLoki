@@ -2,12 +2,14 @@
 
 {% block body %}
 <form method="POST" action="{{ url_for('note_create', book_id=book.id) }}">
-    <div>
-        {{ form.note.label }}
-        {{ form.note }}
+
+    <div class="form-group">
+        <label for="note">Kommentti:</label>
+        <textarea class="form-control" id="note" name="note"></textarea>
     </div>
+
     <div>
-        <input type="submit" value="Lisää kommentti"/>
+        <button type="submit" class="btn btn-primary">Lisää Kommentti</button>
     </div>
 </form>
 

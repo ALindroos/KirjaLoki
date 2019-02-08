@@ -8,21 +8,25 @@
         <div>{{field }}: {{ error }}</div>
     {% endfor %}
     {% endfor %}
+    <br>
+
+    <div class="form-group">
+        <label for="title">{{ form.title.label }}</label>
+        <input type ="text" class="form-control" id="title" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="author">{{ form.author.label }}</label>
+        <input type ="text" class="form-control" id="author" name="author">
+    </div>
+
+    <div class="form-group">
+        <label for="description">{{ form.description.label }}</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+    </div>
 
     <div>
-        {{ form.title.label }}
-        {{ form.title }}
-    </div>
-    <div>
-        {{ form.author.label }}
-        {{ form.author }}
-    </div>
-    <div>
-        {{ form.description.label}}
-        {{ form.description }}
-    </div>
-    <div>
-        <input type="submit" value="Lisää Kirja"/>
+        <button type="submit" class="btn btn-primary">Lisää Kirja</button>
     </div>
 </form>
 
