@@ -4,7 +4,7 @@ Admin/lisääjä?Kaikki?
 
 * Lisää tietoa? (ISBN?)
 
-* Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?)
+* Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?) - toimii väärin postgresql
 
 * Salasana validointi?
 
@@ -12,6 +12,6 @@ Admin/lisääjä?Kaikki?
 
 * Bonus:Helmet linkitys?
 
-* Paranneltu listaus
+* Korjaa
 
 * Agregate queries

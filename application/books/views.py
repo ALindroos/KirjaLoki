@@ -11,7 +11,7 @@ from application.auth.models import User
 @app.route("/books", methods=["GET"])
 def books_index():
     recent = Book.most_recent()
-    popular = Book.query.all()
+    popular = Book.query.all() # readBooks linkitaulu toimii väärin postgresql:ssä joten ei käytössä
     notes = Book.most_notes()
     return render_template("books/list.html", recent=recent, popular=popular, notes=notes)
 
