@@ -2,6 +2,8 @@ from application import db
 
 from sqlalchemy.sql import text
 
+from application.auth.models import readBooks
+
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
@@ -14,6 +16,8 @@ class Book(db.Model):
 
     bookNotes = db.relationship("Note", backref='book', lazy=True)
 
+    readBooks = db.relationship("User", secondary=readBooks)
+
     def __init__(self, title, author, description):
         self.title = title
         self.author = author
@@ -22,8 +26,8 @@ class Book(db.Model):
 
     @staticmethod
     def most_popular_books():
-        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(readBooks.book_id) FROM Book, readBooks"
-                    " WHERE Book.id = readBooks.book_id"
+        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(readBooks.book_id) FROM Book"
+                    " LEFT JOIN readBooks ON Book.id = readBooks.book_id"
                     " GROUP BY Book.id"
                     " HAVING COUNT(readBooks.book_id) > 0"
                     " ORDER BY 4 DESC"
