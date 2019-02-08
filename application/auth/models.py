@@ -19,8 +19,8 @@ class User(db.Model):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    readBooks = db.relationship('Book',secondary=readBooks, lazy="subquery",
-        backref=db.backref('books', lazy=True))
+    readBooks = db.relationship('Book', secondary=readBooks, lazy="subquery",
+        backref=db.backref('accounts', lazy=True))
 
     userNotes = db.relationship("Note", backref='account', lazy=True)
 
