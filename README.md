@@ -14,5 +14,9 @@ Toimintoja:
    * Oman luku-profiilin muokkaus, luettujen kirjojen lisäys
    * Arvosteluiden kirjoittaminen/muokkaus/poisto
    
+Tunnukset sovelluksen testaamiseen: test - test
+
 [User Stories:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/features.md)
+
+[Hahmotelma Tietokanta-kaaviosta:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/kaavio1.png)
 

@@ -3,13 +3,21 @@
 {% block body %}
 
  <h2>{{ book.title }}<br>({{ book.author }})</h2>
+ <br>
  <h3>Kuvaus:</h3>
- <p>{{ book.description }}</p>
+ <div class="card bg-light">
+      <div class="card-body">
+            {{ book.description }}
+      </div>
+ </div>
+ 
+
+
  <h3>Käyttäjien merkintöjä:</h3>
 
- <ul>
+ <ul class=list-group>
      {% for note in book.bookNotes %}
-      <li>{{ note.note }}</li>  
+      <li class=list-group-item>{{ note.note }}</li>  
      {% endfor %}
  </ul>
  <br>

@@ -3,9 +3,6 @@
 
 ## Backlog
 
-
-### Käyttöliittymä
-
 ### Käyttäjä voi poistaa/muokata kommentteja
 
 
@@ -22,6 +19,9 @@ Käyttäjä voi luoda sovelluksen kautta uuden käyttäjätunnuksen, olettaen et
 
 ### Käyttäjä voi poistaa kirjoja luettujen kirjojen listalta
 Kirjansivuilla on nyt nappi jonka avulla lisätyn kirjan voi poistaa omalta listaltaan
+
+### Käyttöliittymä
+Sovelluksella on nyt pohja mielyttävämmälle käyttöliittymälle
 
 ### Käyttäjä voi poistaa kirjoja
 Kirjan sivuilta voi poistaa kirjan
