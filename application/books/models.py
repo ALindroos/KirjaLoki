@@ -22,8 +22,8 @@ class Book(db.Model):
 
     @staticmethod
     def most_popular_books():
-        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(readBooks.book_id) FROM Book"
-                    " JOIN readBooks ON readBooks.book_id = Book.id"
+        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(readBooks.book_id) FROM Book, readBooks"
+                    " WHERE Book.id = readBooks.book_id"
                     " GROUP BY Book.id"
                     " HAVING COUNT(readBooks.book_id) > 0"
                     " ORDER BY 4 DESC"
