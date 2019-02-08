@@ -2,6 +2,8 @@ from application import db
 
 from sqlalchemy.sql import text
 
+from application.auth import models
+
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
