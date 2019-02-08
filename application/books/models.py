@@ -2,8 +2,6 @@ from application import db
 
 from sqlalchemy.sql import text
 
-from application.auth.models import readBooks
-
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
@@ -15,8 +13,6 @@ class Book(db.Model):
     description = db.Column(db.String(526), nullable=True)
 
     bookNotes = db.relationship("Note", backref='book', lazy=True)
-
-    readBooks = db.relationship("User", secondary=readBooks)
 
     def __init__(self, title, author, description):
         self.title = title
