@@ -11,7 +11,7 @@ from application.auth.models import User
 @app.route("/books", methods=["GET"])
 def books_index():
     recent = Book.most_recent()
-    popular = Book.most_popular_books()
+    popular = Book.query.all()
     notes = Book.most_notes()
     return render_template("books/list.html", recent=recent, popular=popular, notes=notes)
 
