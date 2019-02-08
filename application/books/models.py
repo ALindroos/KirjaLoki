@@ -55,7 +55,7 @@ class Book(db.Model):
     @staticmethod
     def most_recent():
         stmt = text("SELECT Book.id, Book.title, Book.author, Book.date_created FROM Book"
-                    " GROUP By Book.date_created"
+                    " GROUP By Book.id"
                     " ORDER BY 4 DESC "
                     " LIMIT 10")
         res = db.engine.execute(stmt)
