@@ -4,7 +4,7 @@ from flask_login import login_required, current_user
 from application import app, db
 from application.books.models import Book
 from application.books.forms import BookForm
-from application.auth.models import readBooks
+from application.auth.models import read_books
 from application.notes.models import Note
 from application.notes.forms import NoteForm
 
