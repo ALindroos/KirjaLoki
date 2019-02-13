@@ -16,14 +16,14 @@
  <h3>Käyttäjien merkintöjä:</h3>
 
  <ul class=list-group>
-     {% for note in book.bookNotes %}
+     {% for note in book.book_notes %}
       <li class=list-group-item>{{ note.note }}</li>  
      {% endfor %}
  </ul>
  <br>
  
  {% set vars = {'read': False} %}
- {% for readbook in current_user.readBooks %}
+ {% for readbook in current_user.read_books %}
       {% if readbook.id == book.id %}
             {% if vars.update({'read':True}) %} {% endif %}
       {% endif %}      

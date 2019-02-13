@@ -11,7 +11,7 @@ from application.auth.models import User
 @app.route("/books", methods=["GET"])
 def books_index():
     recent = Book.most_recent()
-    popular = Book.query.all() # readBooks linkitaulu toimii väärin postgresql:ssä joten ei käytössä
+    popular = Book.most_popular_books
     notes = Book.most_notes()
     return render_template("books/list.html", recent=recent, popular=popular, notes=notes)
 
@@ -73,6 +73,7 @@ def books_search():
     return render_template("books/search.html")
 
 #Show search results
+#Cases work differently in Postgresql, fix
 @app.route("/books/results/", methods=["POST"])
 def books_results():
     st = request.form.get("seachTerm")
@@ -88,7 +89,7 @@ def books_results():
 @login_required
 def book_markRead(book_id):
 
-    current_user.readBooks.append(Book.query.get(book_id))
+    current_user.read_books.append(Book.query.get(book_id))
     db.session().commit()
 
     return redirect(url_for("user_page", user_id=current_user.id))
@@ -98,7 +99,7 @@ def book_markRead(book_id):
 @login_required
 def book_removeRead(book_id):
 
-    current_user.readBooks.remove(Book.query.get(book_id))
+    current_user.read_books.remove(Book.query.get(book_id))
     db.session().commit()
 
     return redirect(url_for("user_page", user_id=current_user.id))

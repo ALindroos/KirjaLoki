@@ -6,13 +6,13 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
     date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-    onupdate=db.func.current_timestamp())
+                                onupdate=db.func.current_timestamp())
 
     title = db.Column(db.String(144), nullable=False)
     author = db.Column(db.String(144), nullable=False)
     description = db.Column(db.String(526), nullable=True)
 
-    bookNotes = db.relationship("Note", backref='book', lazy=True)
+    book_notes = db.relationship("Note", backref='book', lazy=True)
 
     def __init__(self, title, author, description):
         self.title = title
@@ -23,10 +23,10 @@ class Book(db.Model):
     #Requires fixin
     @staticmethod
     def most_popular_books():
-        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(readBooks.book_id) FROM Book"
-                    " LEFT JOIN readBooks ON Book.id = readBooks.book_id"
+        stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(read_books.book_id) FROM Book"
+                    " LEFT JOIN read_books ON Book.id = read_books.book_id"
                     " GROUP BY Book.id"
-                    " HAVING COUNT(readBooks.book_id) > 0"
+                    " HAVING COUNT(read_books.book_id) > 0"
                     " ORDER BY 4 DESC"
                     " LIMIT 10")
         res = db.engine.execute(stmt)

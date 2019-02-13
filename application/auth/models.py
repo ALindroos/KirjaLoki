@@ -1,7 +1,7 @@
 from application import db
 
 
-readBooks = db.Table('readBooks',
+read_books = db.Table('read_books',
     db.Column('book_id', db.Integer, db.ForeignKey('book.id'), primary_key=True),
     db.Column('account_id', db.Integer, db.ForeignKey('account.id'), primary_key=True)
 )
@@ -19,9 +19,10 @@ class User(db.Model):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    readBooks = db.relationship('Book', secondary=readBooks)
+    read_books = db.relationship('Book', secondary=read_books, lazy="subquery",
+        backref=db.backref('accounts', lazy=True))
 
-    userNotes = db.relationship("Note", backref='account', lazy=True)
+    user_notes = db.relationship("Note", backref='account', lazy=True)
 
     def __init__(self, name, username, password):
         self.name = name
