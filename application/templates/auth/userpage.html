@@ -7,7 +7,7 @@
 
     <h3>Luetut Kirjat:</h3>
     <ul class="list-group">
-        {% for book in user.readBooks %}
+        {% for book in user.read_books %}
             <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">{{ book.title }}</a><br>({{ book.author }})</li>
         {% endfor %}
     </ul>
