@@ -11,7 +11,7 @@ from application.auth.models import User
 @app.route("/books", methods=["GET"])
 def books_index():
     recent = Book.most_recent()
-    popular = Book.most_popular_books
+    popular = Book.most_popular_books()
     notes = Book.most_notes()
     return render_template("books/list.html", recent=recent, popular=popular, notes=notes)
 
@@ -92,7 +92,7 @@ def book_markRead(book_id):
     current_user.read_books.append(Book.query.get(book_id))
     db.session().commit()
 
-    return redirect(url_for("user_page", user_id=current_user.id))
+    return redirect(url_for('book_show', book_id=book_id))
 
 #remove from booklist
 @app.route("/book/rem/<book_id>", methods=["POST"])
@@ -102,7 +102,7 @@ def book_removeRead(book_id):
     current_user.read_books.remove(Book.query.get(book_id))
     db.session().commit()
 
-    return redirect(url_for("user_page", user_id=current_user.id))
+    return redirect(url_for('book_show', book_id=book_id))
 
 
 #delete book
