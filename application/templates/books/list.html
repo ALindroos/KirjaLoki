@@ -15,9 +15,10 @@
  <h3>Luetuimmat kirjat</h3>
  <ul class="list-group">
      {% for book in popular %}
-     <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
-         {{ book.title }}</a>
-         <br>({{ book.author }})
+     <li class="list-group-item justify-content-between"><a href="{{ url_for('book_show', book_id=book.id) }}">
+        {{ book.title }}</a>
+        <span class="badge badge-primary badge-pill float-right">{{ book.reads }}</span>
+        <br>({{ book.author }})
      </li>
      {% endfor %}
  </ul>
@@ -28,6 +29,7 @@
      {% for book in notes %}
      <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
         {{ book.title }}</a>
+        <span class="badge badge-primary badge-pill float-right">{{ book.notes }}</span>
         <br>({{ book.author }})
      </li>
      {% endfor %}
