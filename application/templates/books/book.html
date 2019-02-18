@@ -45,11 +45,5 @@
  <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
             <button type="submit" class="btn btn-outline-primary">Muokkaa</button>
  </form>
-
-
- <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
-            <button type="submit" class="btn btn-outline-primary">Poista Kirja</button>
- </form>
-
  
 {% endblock %} 

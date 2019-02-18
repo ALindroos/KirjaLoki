@@ -29,8 +29,13 @@
     </div>
 
     <div>
-        <button type="submit" class="btn btn-primary">Vahvista Muutokset</button>
+        <button type="submit" class="btn btn-outline-primary">Vahvista Muutokset</button>
     </div>
+    
+</form>
+
+<form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
+        <button type="submit" class="btn btn-danger">Poista Kirja</button>
 </form>
 
 {% endblock %}
