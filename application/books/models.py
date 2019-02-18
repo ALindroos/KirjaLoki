@@ -66,3 +66,17 @@ class Book(db.Model):
             response.append({"id":row[0], "title":row[1], "author":row[2]})
 
         return response
+
+
+    @staticmethod
+    def basic_search(search_term):
+        stmt = text("SELECT Book.id, Book.title, Book.author FROM Book"
+                    " WHERE lower(Book.title) LIKE lower(:search_term)"
+                    " OR lower(Book.author) LIKE lower(:search_term)").params(search_term=search_term)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"id":row[0], "title":row[1], "author":row[2]})
+
+        return response
