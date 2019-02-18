@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form method="POST" action="{{ url_for('note_edit', book_id=book.id) }}">
+
+    <div class="form-group">
+        <label for="note">{{ form.note.label }}</label>
+        <textarea class="form-control" id="note" name="note">{{note.note}}</textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-outline-primary">Vahvista Muutokset</button>
+    </div>  
+</form>
+
+<form method="POST" action="{{ url_for('note_delete', note_id=note.id) }}">
+        <button type="submit" class="btn btn-danger">Poista Kommentti</button>
+</form>
+
+{% endblock %}

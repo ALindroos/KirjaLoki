@@ -6,6 +6,7 @@ from application.books.models import Book
 from application.books.forms import BookForm
 from application.auth.models import read_books
 from application.auth.models import User
+from application.notes.models import Note
 
 #Basic view, shows all books
 @app.route("/books", methods=["GET"])
@@ -49,7 +50,8 @@ def books_update(book_id):
 #Show individual book
 @app.route("/books/<book_id>", methods=["GET"])
 def book_show(book_id):
-    return render_template("books/book.html", book = Book.query.get(book_id))
+    book = Book.query.get(book_id)
+    return render_template("books/book.html", book=book)
 
 #Create new book
 @app.route("/books/", methods=["POST"])
@@ -73,7 +75,6 @@ def books_search():
     return render_template("books/search.html")
 
 #Show search results
-#Cases work differently in Postgresql, fix
 @app.route("/books/results/", methods=["POST"])
 def books_results(): 
     search_term = "%"+request.form.get("seachTerm")+"%"

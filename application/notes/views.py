@@ -19,7 +19,7 @@ def note_create(book_id):
     form = NoteForm(request.form)
 
     if not form.validate():
-        return render_template("notes/new.html", form = NoteForm(), book = Book.query.get(book_id))
+        return render_template("notes/new.html", form = NoteForm(), book = Book.query.get())
 
     n = Note(form.note.data)
     n.account_id = current_user.id
@@ -29,3 +29,30 @@ def note_create(book_id):
     db.session().commit()
 
     return redirect(url_for('book_show', book_id=book_id))
+
+@app.route("/notes/edit/<book_id>", methods=["POST","GET"])
+@login_required
+def note_edit(book_id):
+    note = Note.query.filter_by(book_id=book_id, account_id=current_user.id).first()
+    book = Book.query.get(book_id)
+    if request.method == "GET":
+        return render_template("notes/edit.html" , form=NoteForm, note=note, book=book)
+    
+    form = NoteForm(request.form)
+
+    if not form.validate():
+        return render_template("note/edit.html",form=form)
+
+    note.note = form.note.data
+    db.session().commit()
+
+    return redirect(url_for('book_show', book_id=book_id))
+
+@app.route("/notes/del/<note_id>", methods=["POST"])
+@login_required
+def note_delete(note_id):
+    n = Note.query.get(note_id)
+    db.session().delete(n)
+    db.session().commit()
+
+    return redirect(url_for("books_index"))
