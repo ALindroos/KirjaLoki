@@ -1,6 +1,8 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 
+from sqlalchemy import func
+
 from application import app, db
 from application.books.models import Book
 from application.books.forms import BookForm
@@ -75,11 +77,10 @@ def books_search():
 #Show search results
 #Cases work differently in Postgresql, fix
 @app.route("/books/results/", methods=["POST"])
-def books_results():
+def books_results(): 
     st = request.form.get("seachTerm")
-    print(st)
     res = Book.query \
-    .filter(Book.title.contains(st) | Book.author.contains(st)) \
+    .filter(func.lower(Book.title.contains(st) | Book.author.contains(st))) \
     .all()
     
     return render_template("books/results.html", books = res)
