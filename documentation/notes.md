@@ -1,17 +1,14 @@
 
-* Miten asettaa käyttö-oikeudet koskien kirjojen muokkausta/poistamista?
-Admin/lisääjä?Kaikki?
+* Käyttö-oikeudet: poisto=admin
 
 * Lisää tietoa? (ISBN?)
 
-* Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?) - toimii väärin postgresql
-
-* Salasana validointi?
+* Paranna haku-toiminallisuutta: Luokitus, priorisointi, (pois rajaus?)
 
 * Toivelista?
 
-* Bonus:Helmet linkitys?
+* Helmet linkitys?
 
-* Korjaa
+* Agregate queries: Kanssalukijoiden kommentit?
 
-* Agregate queries
+* Näytä kommentin kirjoittaja

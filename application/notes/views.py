@@ -56,3 +56,11 @@ def note_delete(note_id):
     db.session().commit()
 
     return redirect(url_for("books_index"))
+
+
+@app.route("/notes/common_notes")
+@login_required
+def common_notes():
+    common_notes = Note.communal_comments(current_user.id)
+
+    return render_template("notes/commonnotes.html", common_notes=common_notes)

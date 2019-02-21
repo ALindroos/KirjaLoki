@@ -20,7 +20,6 @@ class Book(db.Model):
         self.description = description
 
 
-    #Requires fixin
     @staticmethod
     def most_popular_books():
         stmt = text("SELECT Book.id, Book.title, Book.author, COUNT(read_books.book_id) FROM Book"

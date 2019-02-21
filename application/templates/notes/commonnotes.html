@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>Muiden huomioita lukemistasi kirjoista:</h2>
+    <br><br>
+
+    <ul class="list-group">
+        {% for common_note in common_notes %}
+            <li class="list-group-item">
+                <h3><a href="{{ url_for('user_page', user_id=common_note.user_id) }}">{{ common_note.user_name }}:</a></h3>
+                <hr>
+                <a href="{{ url_for('book_show', book_id=common_note.book_id) }}">{{ common_note.title }}</a>
+                <br>({{ common_note.author }})
+                <div class="card bg-light">
+                    <div class="card-body">{{ common_note.note }}</div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+ 
+{% endblock %} 

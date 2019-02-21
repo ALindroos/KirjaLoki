@@ -13,7 +13,7 @@
                 {% for note in user.user_notes %}
                     {% if note.book_id == book.id %}
                         <div class="card bg-light">
-                            <div class="card-body">{{ note.note }}
+                            <div class="card-body">{{ note.note }}</div>
                         </div>
                     {% endif %}
                 {% endfor %}
