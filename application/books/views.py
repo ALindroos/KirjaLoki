@@ -51,7 +51,8 @@ def books_update(book_id):
 @app.route("/books/<book_id>", methods=["GET"])
 def book_show(book_id):
     book = Book.query.get(book_id)
-    return render_template("books/book.html", book=book)
+    book_notes = Book.book_notes_data(book_id)
+    return render_template("books/book.html", book=book, book_notes=book_notes)
 
 #Create new book
 @app.route("/books/", methods=["POST"])

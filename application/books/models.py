@@ -79,3 +79,16 @@ class Book(db.Model):
             response.append({"id":row[0], "title":row[1], "author":row[2]})
 
         return response
+
+    @staticmethod
+    def book_notes_data(book_id):
+        stmt = text("SELECT Note.note, Note.account_id, Account.name FROM Note"
+                    " LEFT JOIN Account ON Note.account_id = Account.id"
+                    " WHERE Note.book_id = :book_id").params(book_id=book_id)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"note":row[0], "user_id":row[1], "user_name":row[2]})
+
+        return response

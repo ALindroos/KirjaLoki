@@ -2,7 +2,8 @@
 
 {% block body %}
 
- <h2>{{ book.title }}<br>({{ book.author }})</h2>
+ <h2>{{ book.title }}</h2>
+ <h3>({{ book.author }})</h3>
  <br>
  <h3>Kuvaus:</h3>
  <div class="card bg-light">
@@ -10,14 +11,19 @@
             {{ book.description }}
       </div>
  </div>
- 
+ <br>
 
 
  <h3>Käyttäjien merkintöjä:</h3>
 
  <ul class=list-group>
-     {% for note in book.book_notes %}
-      <li class=list-group-item>{{ note.note }}</li>  
+      {% for note in book_notes %}           
+            <li class=list-group-item>
+                  <h4><a href="{{ url_for('user_page', user_id=note.user_id) }}">{{ note.user_name}}:</a></h4>
+                  <div class="card bg-light">
+                        <div class="card-body">{{ note.note }}</div>
+                  </div>   
+            </li> 
      {% endfor %}
  </ul>
  <br>
