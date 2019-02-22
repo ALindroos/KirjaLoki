@@ -47,6 +47,6 @@ class User(db.Model):
         roles = []
         roles.append(self.role)
         if self.role == "ADMIN":
-            roles.append["USER"]
+            roles.append("USER")
 
         return roles
