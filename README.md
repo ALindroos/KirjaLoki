@@ -23,9 +23,10 @@ Toimintoja:
    * Kirjojen katseleminen eri kriteereille
    * Lukemilleen kirjoille muiden jättämien kommenttien katsominen
 
-Tunnukset sovelluksen testaamiseen: 
-    ```Käyttäjänimi: test
-       Salasana: test```
+```Tunnukset sovelluksen testaamiseen: 
+       Käyttäjänimi: test
+       Salasana: test
+```
 
 [User Stories:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/features.md)
 
