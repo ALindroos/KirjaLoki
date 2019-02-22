@@ -13,63 +13,64 @@
  </div>
  <br>
 
+ {% if book_notes %}
+      <h3>Käyttäjien merkintöjä:<span class="badge badge-primary badge-pill" style="margin-left: 10px;">{{ book_notes|length }}</span></h3>
 
- <h3>Käyttäjien merkintöjä:</h3>
-
- <ul class=list-group>
-      {% for note in book_notes %}           
-            <li class=list-group-item>
-                  <h4><a href="{{ url_for('user_page', user_id=note.user_id) }}">{{ note.user_name}}:</a></h4>
-                  <div class="card bg-light">
-                        <div class="card-body">{{ note.note }}</div>
-                  </div>   
-            </li> 
-     {% endfor %}
- </ul>
- <br>
- 
- {% set vars = {'read': False} %}
- {% for readbook in current_user.read_books %}
-      {% if readbook.id == book.id %}
-            {% if vars.update({'read':True}) %} {% endif %}
-      {% endif %}      
- {% endfor %}
-
- 
-
- {% if vars.read %}
-      <form method="POST" action="{{ url_for('book_removeRead', book_id=book.id) }}">
-            <button type="submit" class="btn btn-outline-primary">Poista luetuista kirjoista</button>
-      </form>
-
-      {% set vars = {'note': False} %}
-      {% for note in book.book_notes %}
-            {% if note.account_id == current_user.id %}
-                  {% if vars.update({'note':True}) %} {% endif %}
-            {% endif %}      
+      <ul class=list-group>
+            {% for note in book_notes %}           
+                  <li class=list-group-item>
+                        <h4><a href="{{ url_for('user_page', user_id=note.user_id) }}">{{ note.user_name}}:</a></h4>
+                        <div class="card bg-light">
+                              <div class="card-body">{{ note.note }}</div>
+                        </div>   
+                  </li> 
       {% endfor %}
- 
-      {% if vars.note %}
-            <form method="GET" action="{{ url_for('note_edit', book_id=book.id) }}">
-                  <button type="submit" class="btn btn-outline-primary">Muokkaa Kommenttia</button>
-            </form>
-      {% else %}
-            <form method="GET" action="{{ url_for('note_form', book_id=book.id) }}">
-                  <button type="submit" class="btn btn-outline-primary">Kirjoita kommentti</button>
-            </form>
-      {% endif %}
- {% else %}
-      <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
-            <button type="submit" class="btn btn-outline-primary">Merkitse luetuksi</button>
-     </form>
+      </ul>
+      <br>
  {% endif %}
 
+ {% if current_user.is_authenticated %}
  
+      {% set vars = {'read': False} %}
+      {% for readbook in current_user.read_books %}
+            {% if readbook.id == book.id %}
+                  {% if vars.update({'read':True}) %} {% endif %}
+            {% endif %}      
+      {% endfor %}
+
+      {% if vars.read %}
+            <form method="POST" action="{{ url_for('book_removeRead', book_id=book.id) }}">
+                  <button type="submit" class="btn btn-outline-primary">Poista luetuista kirjoista</button>
+            </form>
+
+            {% set vars = {'note': False} %}
+            {% for note in book.book_notes %}
+                  {% if note.account_id == current_user.id %}
+                        {% if vars.update({'note':True}) %} {% endif %}
+                  {% endif %}      
+            {% endfor %}
+      
+            {% if vars.note %}
+                  <form method="GET" action="{{ url_for('note_edit', book_id=book.id) }}">
+                        <button type="submit" class="btn btn-outline-primary">Muokkaa Kommenttia</button>
+                  </form>
+            {% else %}
+                  <form method="GET" action="{{ url_for('note_form', book_id=book.id) }}">
+                        <button type="submit" class="btn btn-outline-primary">Kirjoita kommentti</button>
+                  </form>
+            {% endif %}
+      {% else %}
+            <form method="POST" action="{{ url_for('book_markRead', book_id=book.id) }}">
+                  <button type="submit" class="btn btn-outline-primary">Merkitse luetuksi</button>
+      </form>
+      {% endif %}
+
+      
 
 
- <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
-            <button type="submit" class="btn btn-outline-primary">Muokkaa Kirjan tietoja</button>
- </form>
+      <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
+                  <button type="submit" class="btn btn-outline-primary">Muokkaa Kirjan tietoja</button>
+      </form>
 
- 
+ {% endif %}
 {% endblock %} 

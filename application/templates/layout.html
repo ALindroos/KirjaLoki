@@ -20,25 +20,25 @@
                     <a class="nav-link" href="{{ url_for('books_index') }} ">Listaa Kirjat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää Kirja</a>
-                </li>
-                <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('books_search') }} ">Hae Kirjoja</a>
                 </li>
                 {% if current_user.is_authenticated %}
-                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää Kirja</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url_for('user_page', user_id=current_user.id) }}">Oma KirjaLoki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('common_notes') }}">Lukijoiden Merkintöjä</a>
-                </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('common_notes') }}">Lukijoiden Merkintöjä</a>
+                    </li>
                 {% endif %}
                 </ul>
                 <div class="form-inline mt-2 mt-md-0">
                     {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('auth_logout') }}">{{ current_user.name }} -- Kirjaudu ulos</a>
+                        <a href="{{ url_for('auth_logout') }}">{{ current_user.name }} -- Kirjaudu ulos</a>
                     {% else %}
-                    <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+                        <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
                     {% endif %}
                 </div>
             </div>

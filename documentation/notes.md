@@ -4,4 +4,13 @@
 
 * Helmet linkitys?
 
-* Näytä kommentin kirjoittaja
+* Välilehdet yms. listauksille kun tarpeeksi suuri (rinnakkain?)
+
+* Salaus
+
+* Korjaa poisto
+
+* Poista note kun kirja poistuu käyttäjän lukulistalta?
+
+
+
