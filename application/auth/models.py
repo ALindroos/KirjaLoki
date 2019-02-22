@@ -18,6 +18,7 @@ class User(db.Model):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+    role = db.Column(db.String(144), nullable=False)
 
     read_books = db.relationship('Book', secondary=read_books, lazy="subquery",
         backref=db.backref('accounts', lazy=True))
@@ -28,6 +29,7 @@ class User(db.Model):
         self.name = name
         self.username = username
         self.password = password
+        self.role = "USER"
 
     def get_id(self):
         return self.id
@@ -40,3 +42,11 @@ class User(db.Model):
 
     def is_authenticated(self):
         return True
+
+    def roles(self):
+        roles = []
+        roles.append(self.role)
+        if self.role == "ADMIN":
+            roles.append["USER"]
+
+        return roles

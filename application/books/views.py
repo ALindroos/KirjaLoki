@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 from application.books.models import Book
 from application.books.forms import BookForm
 from application.auth.models import read_books
@@ -18,13 +18,13 @@ def books_index():
 
 #Show new book form
 @app.route("/books/new/")
-@login_required
+@login_required(role='USER')
 def books_form():
     return render_template("books/new.html", form = BookForm())
 
 #Edit book
 @app.route("/books/edit/<book_id>", methods=["GET"])
-@login_required
+@login_required(role='USER')
 def books_edit(book_id):
     form = BookForm(request.form)
     form.description.data = Book.query.get(book_id).description
@@ -32,7 +32,7 @@ def books_edit(book_id):
 
 #Update book data
 @app.route("/books/upd/<book_id>", methods=["POST"])
-@login_required
+@login_required(role='USER')
 def books_update(book_id):
     form = BookForm(request.form)
 
@@ -55,7 +55,7 @@ def book_show(book_id):
 
 #Create new book
 @app.route("/books/", methods=["POST"])
-@login_required
+@login_required(role='USER')
 def books_create():
     form = BookForm(request.form)
 
@@ -84,7 +84,7 @@ def books_results():
 
 #Mark a book read
 @app.route("/books/add/<book_id>", methods=["POST"])
-@login_required
+@login_required(role='USER')
 def book_markRead(book_id):
 
     current_user.read_books.append(Book.query.get(book_id))
@@ -94,7 +94,7 @@ def book_markRead(book_id):
 
 #remove from booklist
 @app.route("/book/rem/<book_id>", methods=["POST"])
-@login_required
+@login_required(role='USER')
 def book_removeRead(book_id):
 
     current_user.read_books.remove(Book.query.get(book_id))
@@ -105,7 +105,7 @@ def book_removeRead(book_id):
 
 #delete book
 @app.route("/books/del/<book_id>", methods=["POST"])
-@login_required
+@login_required(role='ADMIN')
 def book_delete(book_id):
 
     b = Book.query.get(book_id)
