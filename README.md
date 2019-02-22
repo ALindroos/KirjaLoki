@@ -14,7 +14,7 @@ Käyttäjän sivulta "Omasta KirjaLokista" löytyy sitten kaikki käyttäjän lu
 Ja koska on aina yhtä kiinnostaa tietää mitä muut ovat ajatelleet lukemastaan kirjasta, niin "Lukijoiden merkinnöistä näkee minkälaisia kommentteja muut käyttäjä ovat jättäneet lähiaikoina kirjoille jotka on itse lukenut. Jos vaikka löytyy kiinnosta kommentti niin kirjoittajan nimestä voi hypätä tämän sivulle ja katsoa mitä kaikkeä hän on lukenut ja niistä kirjoittanut.
 
 
-Toimintoja:
+### Toimintoja:
    * Kirjan lisäys, muokkaaminen
    * Kirjojen haku
    * Kirjautuminen ja rekisteröinti
@@ -23,7 +23,8 @@ Toimintoja:
    * Kirjojen katseleminen eri kriteereille
    * Lukemilleen kirjoille muiden jättämien kommenttien katsominen
 
-```Tunnukset sovelluksen testaamiseen: 
+``` 
+Tunnukset sovelluksen testaamiseen: 
        Käyttäjänimi: test
        Salasana: test
 ```
