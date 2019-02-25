@@ -97,7 +97,6 @@ def book_markRead(book_id):
 @app.route("/book/rem/<book_id>", methods=["POST"])
 @login_required(role='USER')
 def book_removeRead(book_id):
-
     current_user.read_books.remove(Book.query.get(book_id))
     db.session().commit()
 
@@ -110,6 +109,11 @@ def book_removeRead(book_id):
 def book_delete(book_id):
 
     b = Book.query.get(book_id)
+    notes = Note.query.filter_by(book_id=book_id).all()
+
+    for note in notes:
+        db.session().delete(note)
+        
     db.session().delete(b)
     db.session().commit()
 
