@@ -4,6 +4,7 @@
 
  <h2>{{ book.title }}</h2>
  <h3>({{ book.author }})</h3>
+ <h5>ISBN: {{ book.isbn }}</h3>
  <br>
  <h3>Kuvaus:</h3>
  <div class="card bg-light">
@@ -65,12 +66,9 @@
       </form>
       {% endif %}
 
-      
-
-
       <form method="GET" action="{{ url_for('books_edit', book_id=book.id) }}">
                   <button type="submit" class="btn btn-outline-primary">Muokkaa Kirjan tietoja</button>
       </form>
-
  {% endif %}
+
 {% endblock %} 

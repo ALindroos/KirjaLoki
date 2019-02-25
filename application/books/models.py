@@ -11,13 +11,15 @@ class Book(db.Model):
     title = db.Column(db.String(144), nullable=False)
     author = db.Column(db.String(144), nullable=False)
     description = db.Column(db.String(526), nullable=True)
+    isbn = db.Column(db.String(13), nullable=False)
 
     book_notes = db.relationship("Note", backref='book', lazy=True)
 
-    def __init__(self, title, author, description):
+    def __init__(self, title, author, description, isbn):
         self.title = title
         self.author = author
         self.description = description
+        self.isbn = isbn
 
 
     @staticmethod

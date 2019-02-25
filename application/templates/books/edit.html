@@ -24,6 +24,11 @@
     </div>
 
     <div class="form-group">
+        <label for="isbn">{{ form.isbn.label }}</label>
+        <input type="text" class="form-control" id="isbn" name="isbn" value="{{book.isbn}}">
+    </div>
+
+    <div class="form-group">
         <label for="description">{{ form.description.label }}</label>
         <textarea class="form-control" id="description" name="description">{{book.description}}</textarea>
     </div>

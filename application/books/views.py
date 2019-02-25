@@ -63,7 +63,7 @@ def books_create():
     if not form.validate():
         return render_template("books/new.html", form = form)
 
-    b = Book(form.title.data, form.author.data, form.description.data)
+    b = Book(form.title.data, form.author.data, form.description.data, form.isbn.data)
 
     db.session().add(b)
     db.session().commit()
