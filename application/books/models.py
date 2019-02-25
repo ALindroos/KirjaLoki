@@ -57,7 +57,7 @@ class Book(db.Model):
         stmt = text("SELECT Book.id, Book.title, Book.author, Book.date_created FROM Book"
                     " GROUP By Book.id"
                     " ORDER BY 4 DESC "
-                    " LIMIT 10")
+                    " LIMIT 5")
         res = db.engine.execute(stmt)
 
         response = []

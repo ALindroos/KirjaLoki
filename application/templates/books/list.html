@@ -2,38 +2,46 @@
 
 {% block body %}
 
- <h3>Uusia Kirjoja</h3>
- <ul class="list-group">
-    {% for book in recent %}
-        <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
-            {{ book.title }}</a><br>({{ book.author }})
-        </li>
-    {% endfor %}
- </ul>
+ <div class="row">
+    <div class="col-7 mx-auto">
+        <h3>Uusia Kirjoja</h3>
+        <ul class="list-group">
+            {% for book in recent %}
+                <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
+                    {{ book.title }}</a><br>({{ book.author }})
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+ </div>       
  <br>
 
- <h3>Luetuimmat kirjat</h3>
- <ul class="list-group">
-     {% for book in popular %}
-     <li class="list-group-item justify-content-between"><a href="{{ url_for('book_show', book_id=book.id) }}">
-        {{ book.title }}</a>
-        <span class="badge badge-primary badge-pill float-right">{{ book.reads }}</span>
-        <br>({{ book.author }})
-     </li>
-     {% endfor %}
- </ul>
- <br>
+ <div class="row">
+    <div class="col-sm-6 left">
+        <h3>Luetuimmat kirjat</h3>
+        <ul class="list-group">
+            {% for book in popular %}
+            <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
+                {{ book.title }}</a>
+                <span class="badge badge-primary badge-pill float-right">{{ book.reads }}</span>
+                <br>({{ book.author }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
- <h3>Puhutuimmat kirjat</h3>
- <ol class="list-group">
-     {% for book in notes %}
-     <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
-        {{ book.title }}</a>
-        <span class="badge badge-primary badge-pill float-right">{{ book.notes }}</span>
-        <br>({{ book.author }})
-     </li>
-     {% endfor %}
- </ol>
- <br>
-
+    <div class="col-sm-6 rigth">
+        <h3>Puhutuimmat kirjat</h3>
+        <ul class="list-group">
+            {% for book in notes %}
+            <li class="list-group-item"><a href="{{ url_for('book_show', book_id=book.id) }}">
+                {{ book.title }}</a>
+                <span class="badge badge-primary badge-pill float-right">{{ book.notes }}</span>
+                <br>({{ book.author }})
+            </li>
+            {% endfor %}
+        </ul>   
+    </div>
+</div>
+<br>
 {% endblock %} 
