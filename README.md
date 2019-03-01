@@ -29,7 +29,13 @@ Tunnukset sovelluksen testaamiseen:
        Salasana: test
 ```
 
+[Asennus:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/installation.md))
+
+[Käyttöohjeet:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/manual.md))
+
 [User Stories:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/features.md)
+
+[Tietokannan kuvaus:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/database.md)
 
 [Hahmotelma Tietokanta-kaaviosta:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/kaavio1.png)
 
