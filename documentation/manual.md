@@ -5,9 +5,9 @@ Suurin osa toiminnoista on käytettävissä ainoastaan kirjautuneillä käyttäj
 
 Loput ohjeen toiminnoista on kuvattu kirjautuneen käyttäjän kannalta. Poikkeuksena se, että vain ADMIN-tason käyttäjä voi poistaa kirjoja sovelluksesta.
 
-## Keskeiset toiminnot:
+# Keskeiset toiminnot:
 
-### Yläpalkki:
+## Yläpalkki:
 
 #### Listaa Kirjoja:
 Palauttaa kolme listaa sovelluksen kirjoista:
@@ -30,7 +30,7 @@ Näyttää uusimpia kommenttejä mitä muut käyttäjät ovat jättäneet kaikil
 #### Kirjaudu/Kirjaudu ulos
 Jos käyttäjä on kirjautunut kirjaa käyttäjän ulos. Muussa tapauksessa avaa kirjautumis-sivun, josta myös linkki uuden käyttäjän luomista varten
 
-### Kirjoihin liittyviä toimintoja:
+## Kirjoihin liittyviä toimintoja:
 Kirjan perustietoihin pääsee aina painamalla kirjan nimen kohdalla olevaa linkkiä.
 Kirjan sivulta löytyy seuraavanlaisia komentoja:
 
@@ -48,7 +48,7 @@ Avaa lomakkeen jonka avulla voi muokata kirjan tietoja. Sisältää myös mahdol
 #### Hae Helmetistä:
 Etsii Helmetistä (Pääkaupunkisueden yleisten kirjastojen kirjastoverkko) ISBN perusteella kyseistä kirjaa. Jos vaikka heti haluaa varata kiinnostava näköisen kirjan.
 
-### Käyttäjiin liittyviä toimintoja:
+## Käyttäjiin liittyviä toimintoja:
 
 #### Rekisteröityminen:
 Löytyy kirjaudu lomakkeella olevan "Luo uusi käyttäjätunnus?" linkin takaa.
