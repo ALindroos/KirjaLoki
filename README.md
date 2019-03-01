@@ -29,9 +29,9 @@ Tunnukset sovelluksen testaamiseen:
        Salasana: test
 ```
 
-[Asennus:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/installation.md))
+[Asennus:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/installation.md)
 
-[Käyttöohjeet:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/manual.md))
+[Käyttöohjeet:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/manual.md)
 
 [User Stories:](https://github.com/ALindroos/KirjaLoki/blob/master/documentation/features.md)
 

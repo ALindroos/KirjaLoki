@@ -7,7 +7,6 @@
 Jos halutaan siirtää ohjelma vielä Heroku-palveluun, tarvitaan vielä:
 + git
 + heroku-cli
-+ 
 
 ## Käyttöönotto lokaalisti:
 + Lataa projektin Github repositorio (clone tai zip) ja pura haluamaasi kansioon
